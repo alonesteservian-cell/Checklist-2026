@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - Mi Lista de Series</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="auth-overlay">
+    <div class="auth-card">
+      <h1 class="auth-titulo">Mi Lista de Series</h1>
+      <p class="auth-subtitulo" id="auth-subtitulo">Ingresá tu cuenta para continuar</p>
+
+      <form id="auth-form">
+        <div class="auth-fields">
+          <input class="task-title" type="email"    id="auth-email"    placeholder="correo@ejemplo.com" required>
+          <div class="password-wrapper">
+            <input class="task-title" type="password" id="auth-password" placeholder="••••••••" required>
+            <button type="button" id="toggle-password" class="btn-toggle-pass">👁</button>
+          </div>
+        </div>
+        <p class="auth-error" id="auth-error"></p>
+        <button type="submit" class="btn-guardar" id="auth-btn">Iniciar Sesión</button>
+      </form>
+
+      <p class="auth-toggle">
+        <span id="auth-toggle-text">¿No tenés cuenta?</span>
+        <button class="auth-toggle-btn" id="auth-toggle-btn">Crear cuenta</button>
+      </p>
+    </div>
+  </div>
+
+  <!-- ✅ Apunta al archivo correcto -->
+  <script type="module" src="login.js"></script>
+</body>
+</html>

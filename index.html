@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Lista de Series</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- app oculto por defecto, index.js lo muestra si hay sesión -->
+  <div id="app" class="container" style="display:none;">
+
+    <!-- ── Sidebar / Formulario ── -->
+    <aside class="formulario">
+      <div class="menu-form">
+        <span class="titulo-form">Nueva Serie</span>
+
+        <!-- Iconos toggle mobile -->
+        <img id="icono-open"  src="https://cdn-icons-png.flaticon.com/512/1828/1828925.png" alt="abrir formulario"  class="open"  title="Abrir">
+        <img id="icono-close" src="https://cdn-icons-png.flaticon.com/512/1828/1828778.png" alt="cerrar formulario" class="close" title="Cerrar" style="display:none;">
+
+        <button class="btn-logout" id="btn-logout">Salir</button>
+      </div>
+
+      <form id="task-form">
+        <div class="contenido-form" id="contenido-form">
+          <label for="task-title">Título</label>
+          <input  class="task-title" type="text" id="task-title" name="task-title" placeholder="Nombre de la serie..." required>
+
+          <label for="sinopsis">Sinopsis</label>
+          <textarea class="descripcion" id="sinopsis" name="sinopsis" rows="3" placeholder="Breve sinopsis..."></textarea>
+
+          <label for="comentario">Reseña</label>
+          <textarea class="descripcion" id="comentario" name="comentario" rows="3" placeholder="Tu opinión..."></textarea>
+
+          <button type="submit" class="btn-guardar" id="btn-task-save">Guardar</button>
+        </div>
+      </form>
+    </aside>
+
+    <!-- ── Lista de series ── -->
+    <main class="listatareas">
+      <div class="tasks-container" id="tasks-container"></div>
+    </main>
+
+  </div>
+
+  <!-- Modal de edición -->
+  <div class="modal-overlay" id="edit-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <span class="modal-icon">🎬</span>
+        <h2>Editar Serie</h2>
+        <button class="modal-close" id="modal-close" title="Cerrar">×</button>
+      </div>
+      <form id="edit-form">
+        <div class="modal-fields">
+          <div>
+            <label for="edit-title">Título</label>
+            <input class="task-title" type="text" id="edit-title" placeholder="Nombre de la serie..." required>
+          </div>
+          <div>
+            <label for="edit-sinopsis">Sinopsis</label>
+            <textarea class="descripcion" id="edit-sinopsis" rows="3" placeholder="Breve sinopsis..."></textarea>
+          </div>
+          <div>
+            <label for="edit-comentario">Reseña</label>
+            <textarea class="descripcion" id="edit-comentario" rows="3" placeholder="Tu opinión..."></textarea>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-modal-cancel" id="modal-cancel">Cancelar</button>
+          <button type="submit" class="btn-modal-save">✓ Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
